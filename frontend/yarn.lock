@@ -6796,6 +6796,11 @@ pngquant-bin@^3.0.0:
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
 
+pocketbase@^0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.13.1.tgz#b6297148999f67d9b4b5eb86ebb5013ef9c55640"
+  integrity sha512-3Wsj87VcmvqmziWXdXWKyCDKbA3rfMR5wlP64UJj+7KBss4ZEXv3Z1ZXhLe5OOiFwF+ErbcO9bzWBMrVLfsIpQ==
+
 portfinder@^1.0.9:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"

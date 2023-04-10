@@ -8,11 +8,20 @@
                 <router-link class="nav-item" tag="li" to="/" exact>
                     <a class="nav-link"><i class="fa fa-home"></i> Home</a>
                 </router-link>
-                <router-link class="nav-item" tag="li" to="/posts" exact>
-                    <a class="nav-link"><i class="fa fa-file-text-o"></i> Posts</a>
+                <router-link class="nav-item" tag="li" to="/categories" exact>
+                    <a class="nav-link"><i class="fa fa-list"></i> Categories </a>
                 </router-link>
-                <router-link class="nav-item" tag="li" to="/posts/create" exact>
-                    <a class="nav-link"><i class="fa fa-pencil"></i> Create post</a>
+                <router-link class="nav-item" tag="li" to="/tags" exact>
+                    <a class="nav-link"><i class="fa fa-tags"></i> Tags </a>
+                </router-link>
+                <router-link class="nav-item" tag="li" to="/videos" exact>
+                    <a class="nav-link"><i class="fa fa-youtube"></i> Videos </a>
+                </router-link>
+                <router-link class="nav-item" tag="li" to="/clips" exact>
+                    <a class="nav-link"><i class="fa fa-video-camera"></i> Clips </a>
+                </router-link>
+                <router-link class="nav-item" tag="li" to="/test2" exact>
+                    <a class="nav-link"><i class="fa fa-video-camera"></i> Test2 </a>
                 </router-link>
             </ul>
         </nav>

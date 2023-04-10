@@ -18,7 +18,22 @@ export const router = new VueRouter({
   mode: 'history',
   linkActiveClass: 'active'
 });
+import PocketBase from 'pocketbase';
+const pb = new PocketBase('http://127.0.0.1:8090');
 
+Vue.prototype.$pb = pb;
+Vue.prototype.$player = null;
+window.onYouTubeIframeAPIReady = () => {
+  Vue.prototype.$player = new window.YT.Player('player', {
+    height: 0,
+    width: 0,
+    events: {
+      'onReady': () => {
+        console.log('YouTube API loaded')
+      },
+    },
+  })
+}
 new Vue({
   router,
   components: {
@@ -26,13 +41,15 @@ new Vue({
     Loader
   },
 
-  data(){
+  data() {
     return {
       isLoading: false
     };
   },
-
-  created(){
+  mounted() {
+    // Set up the global YT object
+  },
+  created() {
     LoadingState.$on('toggle', (isLoading) => {
       this.isLoading = isLoading;
     });

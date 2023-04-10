@@ -1,66 +1,54 @@
 migrate((db) => {
   const collection = new Collection({
-    "id": "wmfmb1yiqckpk9g",
-    "created": "2023-04-02 09:25:40.468Z",
-    "updated": "2023-04-02 09:25:40.468Z",
+    "id": "xogmnmwp6svtauu",
+    "created": "2023-04-10 14:04:23.765Z",
+    "updated": "2023-04-10 14:04:23.765Z",
     "name": "clips",
     "type": "base",
     "system": false,
     "schema": [
       {
         "system": false,
-        "id": "yr3w7mn0",
-        "name": "startTime",
-        "type": "date",
-        "required": false,
-        "unique": false,
-        "options": {
-          "min": "",
-          "max": ""
-        }
-      },
-      {
-        "system": false,
-        "id": "6zncatjy",
-        "name": "endTime",
-        "type": "date",
-        "required": false,
-        "unique": false,
-        "options": {
-          "min": "",
-          "max": ""
-        }
-      },
-      {
-        "system": false,
-        "id": "xptu3ukw",
-        "name": "tags",
-        "type": "text",
-        "required": false,
-        "unique": false,
-        "options": {
-          "min": null,
-          "max": null,
-          "pattern": ""
-        }
-      },
-      {
-        "system": false,
-        "id": "3zhk4m2v",
-        "name": "youtubeUrl",
-        "type": "text",
-        "required": false,
-        "unique": false,
-        "options": {
-          "min": null,
-          "max": null,
-          "pattern": ""
-        }
-      },
-      {
-        "system": false,
-        "id": "ewdisest",
+        "id": "bruyqfju",
         "name": "title",
+        "type": "text",
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "system": false,
+        "id": "pmgvaiod",
+        "name": "start_time",
+        "type": "text",
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "system": false,
+        "id": "dm35ci2z",
+        "name": "end_time",
+        "type": "date",
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": "",
+          "max": ""
+        }
+      },
+      {
+        "system": false,
+        "id": "vj939rrh",
+        "name": "description",
         "type": "text",
         "required": false,
         "unique": false,
@@ -83,7 +71,7 @@ migrate((db) => {
   return Dao(db).saveCollection(collection);
 }, (db) => {
   const dao = new Dao(db);
-  const collection = dao.findCollectionByNameOrId("wmfmb1yiqckpk9g");
+  const collection = dao.findCollectionByNameOrId("xogmnmwp6svtauu");
 
   return dao.deleteCollection(collection);
 })

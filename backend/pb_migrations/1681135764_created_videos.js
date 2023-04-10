@@ -1,29 +1,16 @@
 migrate((db) => {
   const collection = new Collection({
-    "id": "8lks6plos3x2cz0",
-    "created": "2023-04-02 09:26:31.513Z",
-    "updated": "2023-04-02 09:26:31.513Z",
-    "name": "tags",
+    "id": "ftw07gttaho0v2n",
+    "created": "2023-04-10 14:09:24.455Z",
+    "updated": "2023-04-10 14:09:24.455Z",
+    "name": "videos",
     "type": "base",
     "system": false,
     "schema": [
       {
         "system": false,
-        "id": "kdqzeijk",
-        "name": "name",
-        "type": "text",
-        "required": false,
-        "unique": false,
-        "options": {
-          "min": null,
-          "max": null,
-          "pattern": ""
-        }
-      },
-      {
-        "system": false,
-        "id": "cxndiytk",
-        "name": "category",
+        "id": "zjsvlosd",
+        "name": "url",
         "type": "text",
         "required": false,
         "unique": false,
@@ -46,7 +33,7 @@ migrate((db) => {
   return Dao(db).saveCollection(collection);
 }, (db) => {
   const dao = new Dao(db);
-  const collection = dao.findCollectionByNameOrId("8lks6plos3x2cz0");
+  const collection = dao.findCollectionByNameOrId("ftw07gttaho0v2n");
 
   return dao.deleteCollection(collection);
 })
