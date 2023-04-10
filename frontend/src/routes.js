@@ -1,10 +1,11 @@
-import Home from 'components/Home/home';
-import Posts from 'components/Posts/posts';
-import Post from 'components/Posts/post';
-import CreatePost from 'components/Posts/createPost';
-import EditPost from 'components/Posts/editPost';
-import NotFound from 'components/NotFound/notFound';
+import Home from 'components/Home/Home';
+import Posts from 'components/Posts/Posts';
+import Post from 'components/Posts/Post';
+import CreatePost from 'components/Posts/CreatePost';
+import EditPost from 'components/Posts/EditPost';
+import NotFound from 'components/NotFound/NotFound';
 import Test from 'components/Posts/test';
+
 
 const routes = [
   {
