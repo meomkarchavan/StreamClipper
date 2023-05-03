@@ -4,8 +4,8 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
+// const imageminMozjpeg = require('imagemin-mozjpeg');
+// const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
@@ -29,34 +29,34 @@ const commonPlugins = [
   new webpack.LoaderOptionsPlugin({
     minimize: isProduction,
     debug: !isProduction,
-    stats: {colors: true},
+    stats: { colors: true },
     eslint: {
       configFile: path.resolve(__dirname, '../.eslintrc'),
       failOnWarning: false,
       failOnError: true,
     },
   }),
-  new ImageminPlugin({
-    disable: false,
-    optipng: {
-      optimizationLevel: 7,
-    },
-    gifsicle: {
-      optimizationLevel: 3,
-    },
-    pngquant: {
-      quality: '65-90',
-      speed: 4,
-    },
-    svgo: {
-      removeUnknownsAndDefaults: false,
-      cleanupIDs: false,
-    },
-    jpegtran: null,
-    plugins: [imageminMozjpeg({
-      quality: 75,
-    })]
-  }),
+  // new ImageminPlugin({
+  //   disable: false,
+  //   optipng: {
+  //     optimizationLevel: 7,
+  //   },
+  //   gifsicle: {
+  //     optimizationLevel: 3,
+  //   },
+  //   pngquant: {
+  //     quality: '65-90',
+  //     speed: 4,
+  //   },
+  //   svgo: {
+  //     removeUnknownsAndDefaults: false,
+  //     cleanupIDs: false,
+  //   },
+  //   jpegtran: null,
+  //   plugins: [imageminMozjpeg({
+  //     quality: 75,
+  //   })]
+  // }),
   new ExtractTextPlugin({
     filename: 'styles/[name].[hash].css',
     allChunks: true,

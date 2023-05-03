@@ -1,8 +1,9 @@
+import 'regenerator-runtime/runtime'
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import { LoadingState } from 'src/config/loading-state';
-import Navigation from 'components/Navigation/navigation';
+import Navigation from 'components/Navigation/Navigation';
 import Loader from 'components/Loader/Loader';
 
 Vue.use(VueRouter);
