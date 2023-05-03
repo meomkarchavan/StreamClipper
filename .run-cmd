@@ -1,0 +1,1 @@
+docker run --hostname=06c820311032 --mac-address=02:42:ac:11:00:03 --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin -p 8090:8090 --restart=no --label='com.docker.compose.project=streamclipper' --label='com.docker.compose.service=app' --label='com.docker.compose.version=2.17.3' --runtime=runc -d streamclipper-app:latest

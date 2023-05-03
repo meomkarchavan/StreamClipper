@@ -1,0 +1,40 @@
+# flyctl launch added from frontend\.gitignore
+frontend\**\node_modules
+frontend\**\build
+frontend\**\*.log
+frontend\**\docs
+
+# flyctl launch added from frontend\node_modules\minipass-sized\.gitignore
+# ignore most things, include some others
+frontend\node_modules\minipass-sized\*
+frontend\node_modules\minipass-sized\.*
+
+!frontend\node_modules\minipass-sized\**\bin
+!frontend\node_modules\minipass-sized\**\lib
+!frontend\node_modules\minipass-sized\**\docs
+!frontend\node_modules\minipass-sized\**\package.json
+!frontend\node_modules\minipass-sized\**\package-lock.json
+!frontend\node_modules\minipass-sized\**\README.md
+!frontend\node_modules\minipass-sized\**\CONTRIBUTING.md
+!frontend\node_modules\minipass-sized\**\LICENSE
+!frontend\node_modules\minipass-sized\**\CHANGELOG.md
+!frontend\node_modules\minipass-sized\**\example
+!frontend\node_modules\minipass-sized\**\scripts
+!frontend\node_modules\minipass-sized\**\tap-snapshots
+!frontend\node_modules\minipass-sized\**\test
+!frontend\node_modules\minipass-sized\**\.travis.yml
+!frontend\node_modules\minipass-sized\**\.gitignore
+!frontend\node_modules\minipass-sized\**\.gitattributes
+!frontend\node_modules\minipass-sized\**\coverage-map.js
+!frontend\node_modules\minipass-sized\**\index.js
+
+# flyctl launch added from frontend\node_modules\weinre\node_modules\mkdirp\.gitignore
+frontend\node_modules\weinre\node_modules\mkdirp\**\node_modules
+frontend\node_modules\weinre\node_modules\mkdirp\**\npm-debug.log
+
+# flyctl launch added from frontend\node_modules\weinre\node_modules\qs\.gitignore
+frontend\node_modules\weinre\node_modules\qs\**\node_modules
+fly.toml
+
+backend\pb_data
+backend\pb_migrations
