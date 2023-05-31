@@ -1,64 +1,77 @@
 <template>
-    <div>
-        <div>
-            <input type="text" v-model="videoUrl" placeholder="Enter YouTube video URL">
-            <button @click="getVideoDetails">Get Video Details</button>
-        </div>
-        <div v-if="videoDetails">
-            <h2>{{ videoDetails.title }}</h2>
-            <p>{{ videoDetails.description }}</p>
-            <p>Duration: {{ videoDetails.duration }}</p>
-        </div>
+  <div>
+    <button @click="openModal">Open Preview</button>
+
+    <div v-if="isModalOpen" class="modal">
+      <div class="modal-content">
+        <span class="close" @click="closeModal">&times;</span>
+        <preview :video-id="videoId" :start-time="startTime" :end-time="endTime" />
+      </div>
     </div>
+  </div>
 </template>
-  
+
 <script>
+import Preview from '../Preview/Preview.vue';
+
 export default {
-    data() {
-        return {
-            videoUrl: '',
-            videoDetails: null,
-            player: null,
-            YT: null,
-        }
+  components: {
+    Preview,
+  },
+  data() {
+    return {
+      isModalOpen: false,
+      videoId: '9PDPNOb8Gig',
+      startTime: 5,
+      endTime: 8,
+    };
+  },
+  methods: {
+    openModal() {
+      this.isModalOpen = true;
     },
-    mounted() {
-
+    closeModal() {
+      this.isModalOpen = false;
     },
-    methods: {
-        getVideoDetails() {
-            const videoId = this.getVideoIdFromUrl(this.videoUrl)
-            if (!videoId) {
-                return
-            }
-
-            // Load the YouTube video
-            this.player.loadVideoById(videoId)
-
-            // Get the video details once the video is ready
-            this.player.addEventListener('onStateChange', (event) => {
-                if (event.data === this.YT.PlayerState.PLAYING) {
-                    const duration = this.player.getDuration()
-                    const videoDetails = {
-                        title: this.player.getVideoData().title,
-                        description: this.player.getVideoData().description,
-                        duration: this.formatTime(duration),
-                    }
-                    this.videoDetails = videoDetails
-                }
-            })
-        },
-        getVideoIdFromUrl(url) {
-            const match = url.match(/[?&]v=([^&]*)/)
-            return match ? match[1] : null
-        },
-        formatTime(time) {
-            const hours = Math.floor(time / 3600)
-            const minutes = Math.floor((time - hours * 3600) / 60)
-            const seconds = Math.floor(time - hours * 3600 - minutes * 60)
-            return `${hours > 0 ? hours + ':' : ''}${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`
-        },
-    },
-}
+  },
+};
 </script>
-  
+
+<style scoped>
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  display: block;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+</style>
