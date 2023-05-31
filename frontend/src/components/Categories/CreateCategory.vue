@@ -12,8 +12,10 @@
                         {{ message.text }}
                     </div>
                 </div>
-                <div v-if="errors.any()" v-for="error in errors.errors" class="alert alert-danger" role="alert">
-                    <strong>Doh!</strong> {{ error.msg }}
+                <div v-if="errors.any()">
+                    <div v-for="error in errors.errors" class="alert alert-danger" role="alert" :key="error.msg">
+                        <strong>Doh!</strong> {{ error.msg }}
+                    </div>
                 </div>
 
                 <div class="form-group row" :class="{ 'has-danger': errors.has('title') }">

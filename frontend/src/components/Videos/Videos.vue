@@ -3,12 +3,13 @@
         <h1 class="mb-4"><i class="fa fa-youtube"></i> Videos</h1>
         <div class="form-group">
             <input class="form-control" placeholder="Filter videos..." v-model="tagsFilter">
-
-            <router-link v-if="filteredVideos.length" class="list-group-item" v-for="(video, index) in filteredVideos"
-                :key="index" :data-index="index" :to="{ name: 'video', params: { id: video.id } }">
-                <!-- {{ video }} -->
-                #{{ index + 1 }} {{ video.title }}
-            </router-link>
+            <div v-if="filteredVideos.length">
+                <router-link class="list-group-item" v-for="(video, index) in filteredVideos"
+                    :key="index" :data-index="index" :to="{ name: 'video', params: { id: video.id } }">
+                    <!-- {{ video }} -->
+                    #{{ index + 1 }} {{ video.title }}
+                </router-link>
+            </div>
 
         </div>
         <router-link class="btn btn-outline-info float-right m-2" :to="{ name: 'createVideo' }">

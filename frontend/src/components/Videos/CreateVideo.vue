@@ -21,8 +21,10 @@
                         {{ message.text }}
                     </div>
                 </div>
-                <div v-if="errors.any()" v-for="error in errors.errors" class="alert alert-danger" role="alert">
-                    <strong>Doh!</strong> {{ error.msg }}
+                <div v-if="errors.any()">
+                    <div v-for="error in errors.errors" class="alert alert-danger" role="alert" :key="error.msg">
+                        <strong>Doh!</strong> {{ error.msg }}
+                    </div>
                 </div>
 
                 <div class="form-group row" :class="{ 'has-danger': errors.has('url') }">
@@ -62,7 +64,7 @@
                             <option :value="9999">
                                 Select Category
                             </option>
-                            <option v-for="category in categories" :value="category.id">
+                            <option v-for="category in categories" :value="category.id" :key="category.id">
                                 {{ category.title }}
                             </option>
                         </select>
@@ -105,9 +107,6 @@ export default {
             duration: null,
             message: null,
             videoUrl: '',
-            // videoDetails: null,
-            player: null,
-            YT: null,
         };
     },
     computed: {
@@ -179,6 +178,7 @@ export default {
             // this.$player.loadVideoById(null);
             const videoId = this.getVideoIdFromUrl(this.videoUrl)
             if (!videoId) {
+                console.log("video id not found");
                 return
             }
 
@@ -188,7 +188,7 @@ export default {
             // this.$player.cueVideoById(videoId)
             this.$player.loadVideoById({
                 videoId,
-                uggestedQuality: 'default',
+                suggestedQuality: 'low',
                 mute: 1
             })
             // Get the video details once the video is ready
